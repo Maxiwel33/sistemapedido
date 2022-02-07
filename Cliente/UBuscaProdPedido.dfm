@@ -1,0 +1,196 @@
+object frm_buscaProdpedido: Tfrm_buscaProdpedido
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'frm_buscaProdpedido'
+  ClientHeight = 452
+  ClientWidth = 519
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 519
+    Height = 43
+    Align = alTop
+    Caption = 'Lista de Produtos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 482
+    object lbl1: TLabel
+      Left = 440
+      Top = 16
+      Width = 61
+      Height = 16
+      Caption = 'F4 -Fecha'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object pnl2: TPanel
+    Left = 0
+    Top = 399
+    Width = 519
+    Height = 53
+    Align = alBottom
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    ExplicitTop = 368
+    ExplicitWidth = 482
+    object dbtxtdescricao: TDBText
+      Left = 168
+      Top = 1
+      Width = 350
+      Height = 51
+      Align = alRight
+      Alignment = taCenter
+      DataField = 'descricao'
+      DataSource = Ds1
+    end
+    object dbtxtcodigo: TDBText
+      Left = 1
+      Top = 1
+      Width = 167
+      Height = 51
+      Align = alClient
+      Alignment = taCenter
+      DataField = 'codigo'
+      DataSource = Ds1
+      ExplicitLeft = 32
+      ExplicitTop = 8
+      ExplicitWidth = 65
+      ExplicitHeight = 17
+    end
+  end
+  object pnl3: TPanel
+    Left = 0
+    Top = 43
+    Width = 519
+    Height = 356
+    Align = alClient
+    Caption = 'pnl3'
+    TabOrder = 2
+    ExplicitLeft = 120
+    ExplicitTop = 72
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object dbgrd1: TDBGrid
+      Left = 1
+      Top = 33
+      Width = 517
+      Height = 322
+      Align = alClient
+      DataSource = Ds1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ParentFont = False
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -16
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnKeyPress = dbgrd1KeyPress
+      Columns = <
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'codigo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Title.Caption = 'Cod'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -16
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = []
+          Width = 150
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'descricao'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Title.Caption = 'Descri'#231#227'o'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -16
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = []
+          Width = 300
+          Visible = True
+        end>
+    end
+    object pnl4: TPanel
+      Left = 1
+      Top = 1
+      Width = 517
+      Height = 32
+      Align = alTop
+      Caption = 'pnl4'
+      TabOrder = 1
+      ExplicitWidth = 480
+      object edt_busca: TEdit
+        Left = 1
+        Top = 1
+        Width = 515
+        Height = 30
+        Align = alClient
+        Alignment = taCenter
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = 0
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnChange = edt_buscaChange
+        OnKeyPress = edt_buscaKeyPress
+        ExplicitWidth = 478
+        ExplicitHeight = 27
+      end
+    end
+  end
+  object Ds1: TDataSource
+    DataSet = DM.QRY_produto
+    Left = 72
+    Top = 169
+  end
+end

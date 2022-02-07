@@ -1,0 +1,50 @@
+unit Classe.cliente;
+
+interface
+
+type
+  Tcliente =class
+    private
+    Fcodigo :Integer;
+    Fnome:string;
+    Fcidade:string;
+    Fuf:string;
+    function getnome: string;
+    procedure setnome(const Value: string);
+
+       public
+       property codigo: Integer read Fcodigo write Fcodigo;
+       property nome: string read getnome write setnome;
+       property cidade :string read Fcidade write Fcidade;
+       property uf: string read Fuf write Fuf;
+
+       constructor create;
+       destructor destroy; override;
+  end;
+
+implementation
+
+{ Tclieente }
+
+constructor Tcliente.create;
+begin
+   inherited create;
+end;
+
+destructor Tcliente.destroy;
+begin
+
+  inherited;
+end;
+
+function Tcliente.getnome: string;
+begin
+    Result:= Fnome;
+end;
+
+procedure Tcliente.setnome(const Value: string);
+begin
+    Fnome:=Value;
+end;
+
+end.

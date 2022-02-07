@@ -1,0 +1,79 @@
+object frm_localclie: Tfrm_localclie
+  Left = 0
+  Top = 0
+  Caption = 'Clientes'
+  ClientHeight = 281
+  ClientWidth = 556
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 556
+    Height = 35
+    Align = alTop
+    Caption = 'pnl1'
+    TabOrder = 0
+    object lbl1: TLabel
+      Left = 464
+      Top = 7
+      Width = 61
+      Height = 16
+      Caption = 'F3 -Fecha'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object edt1: TEdit
+      Left = 1
+      Top = 1
+      Width = 440
+      Height = 33
+      Align = alLeft
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnChange = edt1Change
+      OnKeyPress = edt1KeyPress
+      ExplicitHeight = 27
+    end
+  end
+  object dbgrd1: TDBGrid
+    Left = 0
+    Top = 35
+    Width = 556
+    Height = 246
+    Align = alClient
+    DataSource = Ds1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnKeyPress = dbgrd1KeyPress
+  end
+  object Ds1: TDataSource
+    DataSet = DM.QRY_cliente
+    Left = 208
+    Top = 136
+  end
+end
